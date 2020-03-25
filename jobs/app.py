@@ -1,2 +1,10 @@
-import Flask from flask
-import render_template from flask
+from flask import Flask
+from flask import render_template
+
+app = Flask(__name__)
+
+def jobs():
+    render_template('index.html')
+
+#if __name__ == '__main__':
+#    app.run()
