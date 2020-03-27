@@ -37,4 +37,6 @@ def jobs():
     'FROM job JOIN employer ON employer.id = job.employer_id')
     return render_template('index.html', jobs=jobs)
 
-
+@app.route('/job/<job_id>')
+def job(job_id):
+    return render_template('job.html')
