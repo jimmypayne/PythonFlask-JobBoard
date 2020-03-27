@@ -39,8 +39,5 @@ def jobs():
 
 @app.route('/job/<job_id>')
 def job(job_id):
-    job = execute_sql('SELECT job.id, job.title, job.description, '
-    'job_salary, employer.id as employer_id, employer.name as employer_name '
-    'FROM job JOIN employer on employer.id = job.employer_id where job.id = ?'
-    , [job_id], single=True)
+    job = execute_sql('SELECT job.id, job.title, job.description, job_salary, employer.id as employer_id, employer.name as employer_name FROM job JOIN employer on employer.id = job.employer_id where job.id = ?', [job_id], single=True)
     return render_template('job.html', job=job)
